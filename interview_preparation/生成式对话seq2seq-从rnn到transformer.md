@@ -1,5 +1,5 @@
 # 生成式对话seq2seq:从rnn到transformer
-** https://mp.weixin.qq.com/s/qUxPgsgP-4XFmVMMzLH5Ow **
+**https://mp.weixin.qq.com/s/qUxPgsgP-4XFmVMMzLH5Ow**
 
 ---
 
@@ -46,3 +46,49 @@ Tips:
 - 微软提出了一个通用预训练模型MASS(代码：论文：arxiv.org/abs/1905.02450，github.com/microsoft/MASS)，采用了联合encoder-attention-decoder的训练框架。
 - **Encoder:** 输入为一个被mask掉连续部分token的句子，使用双向transformer对其进行编码。这样处理的目的是更好的捕获没有被mask掉词语信息用于后续decoder的预测。
 - **Decoder：** 输入为与encoder同样的句子，但是mask掉的正好和encoder相反（后面试验直接将masked tokens删去保留unmasked tokens position embedding），使用attention机制去训练，但只预测encoder端被mask掉的词。该操作可以迫使decoder预测的时候更依赖于source端的输入而不是前面预测出的token，同时减缓了传统seq2seq结构的exposure bias问题。
+## Reference
+zhuanlan.zhihu.com/p/53796189
+
+zhuanlan.zhihu.com/p/65062025
+
+blog.csdn.net/qq_32241189/article/details/81591456
+
+fancyerii.github.io/2019/02/14/chatbot/
+
+cnblogs.com/robert-dlut/p/8638283.html
+
+sohu.com/a/42214491_164987
+
+cnblogs.com/hellojamest/p/11128799.html
+
+zhuanlan.zhihu.com/p/85221503
+
+zhuanlan.zhihu.com/p/77307258
+
+blog.csdn.net/qq_38343151/article/details/102993202
+
+zhuanlan.zhihu.com/p/47063917
+
+zhuanlan.zhihu.com/p/47282410
+
+cnblogs.com/jiangxinyang/p/11715678.html
+
+zhuanlan.zhihu.com/p/86900556
+
+blog.csdn.net/u012526436/article/details/101924049
+
+zhuanlan.zhihu.com/p/65346812
+
+zhihu.com/question/324019899/answer/709577373
+
+kexue.fm/archives/6933
+
+zhuanlan.zhihu.com/p/68327602
+
+zhuanlan.zhihu.com/p/70663422
+
+jiqizhixin.com/articles/2019-09-03-14
+
+jiqizhixin.com/articles/2019-08-26-12
+
+zhuanlan.zhihu.com/p/92842331
