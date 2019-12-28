@@ -74,3 +74,37 @@
 5. 如果冲突~git pull同步远程分支
 
 6. git diff 查看冲突内容,修复冲突，重新git push
+
+**高频秘籍**
+
+工作中常见场景:  
+        正在开发需求~突然来了一个紧急bug~开发的代码要怎么办?
+
+1. git diff  commiitID >  diff.patch 将修改内容打成一个diff.patch
+
+2. 切出去修bug
+
+3. bug休完 执行 git apply diff.patch
+
+但是diff.patch 会被我们误删除~~~ 这个时候就很痛苦~
+
+git stash 命令闪亮登场~~~
+
+1. git stash
+
+2.切出去改bug
+
+3.切回来,git stash pop
+
+在A分支修的Bug如何merge到B分支呢?
+
+在B分支上执行 git cherry-pick commitId
+
+1.sourcetree  ---  超级好用~~ 支持mac和windows~
+https://www.sourcetreeapp.com/
+
+2.gerrit --- 代码仓库管理工具~~~基本每个公司都有~~可以用来code review和构建自动化流水线  
+https://www.gerritcodereview.com/  
+https://www.jianshu.com/p/b77fd16894b6  
+
+
